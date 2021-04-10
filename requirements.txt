@@ -1,0 +1,7 @@
+# pip install -r requirements.txt --find-links https://download.pytorch.org/whl/torch_stable.html
+flask==1.1.2
+flask-restful==0.3.8
+transformers==4.5.0
+torch==1.8.1+cpu
+torchvision==0.9.1+cpu
+torchaudio===0.8.1
