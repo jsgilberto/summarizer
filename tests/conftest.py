@@ -1,4 +1,4 @@
-import pytest
+import
 from summarizer.app import app
 
 
@@ -10,4 +10,4 @@ def test_client():
     with flask_app.test_client() as testing_client:
         # Establish an application context
         with flask_app.app_context():
-            yield testing_client  # this is where the testing happens!
+            yield testing_client
