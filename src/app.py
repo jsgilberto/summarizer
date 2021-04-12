@@ -1,3 +1,4 @@
+"""Web app for summarization of text."""
 from flask import Flask
 from flask_restful import Api
 from resources.model import Model

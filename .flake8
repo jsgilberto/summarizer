@@ -1,0 +1,16 @@
+[flake8]
+exclude = 
+    .git
+    models
+    __pycache__
+    venv
+    .pytest_cache
+    __init__.py
+count = True
+ignore = 
+    D208
+    E402
+    D205
+per-file-ignores =
+    ./tests/functional/test_recipes.py:W291
+    ./tests/unit/test_predictor.py:W291

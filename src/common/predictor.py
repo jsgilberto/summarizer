@@ -1,5 +1,4 @@
-""" This module holds the model class
-"""
+"""This module holds the model class."""
 import os
 from transformers import pipeline
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
@@ -11,12 +10,13 @@ ROOT_DIR = os.path.dirname(
 
 
 def load_models(model_name='t5-small', model_dir='models'):
-    """ Load models from local directory (if they exist).
-        If the models don't exist, they are loaded from the internet.
+    """Load models from local directory (if they exist).
 
-        Args:
-            model_name (str, optional): The name of the model to be used.
-            model_dir (str, optional): The name of the tokenizer to be used.
+    If the models don't exist, they are loaded from the internet.
+
+    Args:
+        model_name (str, optional): The name of the model to be used.
+        model_dir (str, optional): The name of the tokenizer to be used.
     """
     model_dir = os.path.join(ROOT_DIR, model_dir)
     try:
@@ -37,10 +37,10 @@ def load_models(model_name='t5-small', model_dir='models'):
 
 
 class Summarizer:
-    """ This class represents the model
-    """
+    """This class represents the model."""
+
     def __init__(self, min_length=100, max_length=300):
-        """ Initialize model instance
+        """Initialize model instance.
 
         Args:
             min_length (int, optional): The minimum length of the result.
@@ -58,7 +58,7 @@ class Summarizer:
         self.max_length = max_length
 
     def predict(self, text):
-        """ Invoke the model using the initialized parameters
+        """Invoke the model using the initialized parameters.
 
         Args:
             text (str): the input text to summarize.
