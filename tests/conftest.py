@@ -1,4 +1,4 @@
-import
+import pytest
 from summarizer.app import app
 
 

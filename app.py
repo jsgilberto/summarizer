@@ -1,6 +1,6 @@
 from flask import Flask
 from flask_restful import Api
-from summarizer.resources.model import Model
+from resources.model import Model
 
 
 app = Flask(__name__)
