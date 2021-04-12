@@ -62,7 +62,7 @@ By default, the app is going to run on port 5000.
 To start making predictions, make a POST request to the following endpoint:
 
 ```sh
-curl --location --request POST 'http://127.0.0.1:5000/api/predict' \
+$ curl --location --request POST 'http://127.0.0.1:5000/api/predict' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "text": "As they rounded a bend in the path that ran beside the river..."
@@ -72,6 +72,55 @@ curl --location --request POST 'http://127.0.0.1:5000/api/predict' \
 Make sure the text is long enough for the model so it is be able to make a
 summary. If its not long enough, it will return as a response the same text you
 initially passed.
+
+## Type consistency
+
+I used mypy for type consistency with the configuration provided in `mypy.ini`
+
+If you want to check type consistency, execute the following command:
+
+```sh
+$ mypy src
+```
+
+## Code validation (PEP-8)
+
+flake8 is the tool used in this module. For validating the code, the following 
+command is used:
+
+```sh
+$ flake8
+```
+
+It uses the `.flake8` configuration file placed in the root of the project.
+
+## Tests
+
+For testing `pytest` was the choice. The tests are located in the `tests` folder
+placed in the root of this project.
+
+```sh
+$ python3 -m pytest -W ignore::DeprecationWarning
+```
+
+or:
+
+```sh
+$ pytest -W ignore::DeprecationWarning
+```
+
+The tests are only an example of what it would look like in a real world project.
+
+## Deployment
+
+For this project I decided to use a WSGI application server: `Gunicorn`. This helps
+us to keep multiple processes of the flask application running.
+
+The following command was used to run gunicorn:
+
+```sh
+gunicorn -w 4 -b 127.0.0.1:8000 --chdir $(pwd)/src wsgi:app 
+```
 
 ## Suggestions
 
