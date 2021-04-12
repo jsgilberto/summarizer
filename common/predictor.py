@@ -56,6 +56,9 @@ class Summarizer:
         Returns:
             str: the summary of the text.
         """
+        if type(text) != str:
+            raise TypeError("text input should be of type 'str'")
+
         if len(text) <= self.min_length:
             return text
         

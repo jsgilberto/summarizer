@@ -1,6 +1,6 @@
 from flask import Flask, jsonify, request
 from flask_restful import Resource
-from common.predictor import Summarizer
+from summarizer.common.predictor import Summarizer
 
 
 model = Summarizer(min_length=100, max_length=300)
