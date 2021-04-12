@@ -1,5 +1,11 @@
+import sys
+import os
+
+ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(os.path.join(ROOT_DIR, "src"))
+"/home/ubuntu/repos/summarizer/src"
 import pytest
-from summarizer.app import app
+from app import app
 
 
 @pytest.fixture(scope='module')

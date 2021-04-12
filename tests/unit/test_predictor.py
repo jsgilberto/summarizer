@@ -1,4 +1,4 @@
-from summarizer.common.predictor import Summarizer, load_models
+from src.common.predictor import Summarizer, load_models
 import pytest
 
 
