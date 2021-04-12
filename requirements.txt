@@ -5,3 +5,5 @@ transformers==4.5.0
 torch==1.8.1+cpu
 torchvision==0.9.1+cpu
 torchaudio==0.8.1
+sentencepiece==0.1.95
+protobuf==3.15.8
