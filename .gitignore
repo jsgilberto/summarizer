@@ -5,3 +5,4 @@ venv
 **/*.pyc
 **/*.log
 **/models
+.mypy_cache
