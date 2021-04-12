@@ -2,14 +2,14 @@
 import os
 from transformers import pipeline
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
-
+from typing import Text
 
 ROOT_DIR = os.path.dirname(
     os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 )
 
 
-def load_models(model_name='t5-small', model_dir='models'):
+def load_models(model_name: Text = 't5-small', model_dir: Text = 'models'):
     """Load models from local directory (if they exist).
 
     If the models don't exist, they are loaded from the internet.
@@ -24,7 +24,6 @@ def load_models(model_name='t5-small', model_dir='models'):
         tokenizer = AutoTokenizer.from_pretrained(model_dir)
         model = AutoModelForSeq2SeqLM.from_pretrained(model_dir)
     except Exception as e:
-        print(f"Error: {e}")
         print(f"Failed loading models from local directory: {model_dir}")
         print("Downloading models from internet...")
 
@@ -39,7 +38,7 @@ def load_models(model_name='t5-small', model_dir='models'):
 class Summarizer:
     """This class represents the model."""
 
-    def __init__(self, min_length=100, max_length=300):
+    def __init__(self, min_length: int = 100, max_length: int = 300):
         """Initialize model instance.
 
         Args:
@@ -57,7 +56,7 @@ class Summarizer:
         self.min_length = min_length
         self.max_length = max_length
 
-    def predict(self, text):
+    def predict(self, text: Text):
         """Invoke the model using the initialized parameters.
 
         Args:

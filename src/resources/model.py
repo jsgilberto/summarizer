@@ -2,6 +2,7 @@
 from flask import jsonify, request
 from flask_restful import Resource
 from common.predictor import Summarizer
+from typing import Any
 
 
 model = Summarizer(min_length=100, max_length=300)
@@ -10,7 +11,7 @@ model = Summarizer(min_length=100, max_length=300)
 class Model(Resource):
     """Resource used to interact with the model."""
 
-    def post(self):
+    def post(self) -> Any:
         """Post method for getting predictions given some text.
 
         Returns:
