@@ -4,6 +4,7 @@ from transformers import pipeline
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 from typing import Text
 
+
 ROOT_DIR = os.path.dirname(
     os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 )
