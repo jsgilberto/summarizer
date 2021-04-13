@@ -1,6 +1,7 @@
 version: 2.1
 jobs:
   build:
+    working_directory: ~/summarizer
     docker:
       - image: cimg/python:3.6.9 # the primary container, where your job's commands are run
     steps:
@@ -15,15 +16,17 @@ jobs:
           name: Loading ML models
           command: python src/load_models.py
       - persist_to_workspace:
-          root: ~/
-          paths: summarizer/models
+          root: .
+          paths:
+            - .
   test:
+    working_directory: ~/summarizer
     docker:
       - image: cimg/python:3.6.9
     steps:
       - checkout
       - attach_workspace:
-          at: ~/
+          at: .
       - run:
           name: Listing files from models directory
           command: ls models
