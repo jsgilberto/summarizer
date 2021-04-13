@@ -7,7 +7,9 @@ jobs:
       - checkout # check out the code in the project directory
       - run: python --version # run the `echo` command
       - run: pip --version
-      - run: ls -a
       - run:
-          name: Installing dependencies
+          name: Listing Files available
           command: ls
+      - run:
+          name: Installing python dependencies
+          command: pip install -r requirements.txt --find-links https://download.pytorch.org/whl/torch_stable.html
