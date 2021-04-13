@@ -5,11 +5,9 @@ jobs:
       - image: cimg/python:3.6.9 # the primary container, where your job's commands are run
     steps:
       - checkout # check out the code in the project directory
-      - run: python --version # run the `echo` command
-      - run: pip --version
       - run:
-          name: Listing Files available
-          command: ls
+          name: Upgrading pip
+          command: pip install --upgrade pip
       - run:
           name: Installing python dependencies
           command: pip install -r requirements.txt --find-links https://download.pytorch.org/whl/torch_stable.html
