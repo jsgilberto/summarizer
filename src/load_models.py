@@ -1,4 +1,4 @@
-"""Module used to load models"""
+"""Module used to load models."""
 from common.predictor import load_models
 
 

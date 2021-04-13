@@ -23,7 +23,7 @@ def load_models(model_name: Text = 't5-small', model_dir: Text = 'models'):
         print(f"Loading models from local directory: {model_dir}")
         tokenizer = AutoTokenizer.from_pretrained(model_dir)
         model = AutoModelForSeq2SeqLM.from_pretrained(model_dir)
-    except Exception as e:
+    except Exception:
         print(f"Failed loading models from local directory: {model_dir}")
         print("Downloading models from internet...")
 
