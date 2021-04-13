@@ -5,6 +5,8 @@
 Small web app exposing a Machine Learning model from HuggingFace. 
 The model creates summaries of text.
 
+[![jsgilberto](https://circleci.com/gh/jsgilberto/summarizer.svg?style=svg)](https://app.circleci.com/pipelines/github/jsgilberto/summarizer)
+
 ## Requirements
 
 This web app server was built with python 3.6 and depends on the following

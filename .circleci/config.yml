@@ -41,7 +41,7 @@ jobs:
           command: pip install -r requirements.txt --find-links https://download.pytorch.org/whl/torch_stable.html
       - run:
           name: Running tests
-          command: pytest -W ignore::DeprecationWarning
+          command: pytest
 workflows:
   version: 2
   build_and_test:
